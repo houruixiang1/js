@@ -1,0 +1,17 @@
+# encoding: utf-8
+# @Time : 2022/10/9
+# @File : login.py
+
+import requests
+import time
+
+import execjs
+
+node = execjs.get()
+with open('login.js', mode='r', encoding='utf-8') as f:
+    jscode = f.read()
+ctx = node.compile(jscode.encode('GBK', 'ignore').decode('GBK'))
+data1 = ctx.eval('window["getUa"]()')
+print(data1)
+aa = 'H4sIAAAAAAAAA52RbW5EIQhFtwT4hcsRhFXM4nvtvNqk6a8h0YNXREQa4QSrFZM841v4Q%2BJK%2FLj63mnzYLs9ciZ9YNs%2FOfWPcSaTbg9e1NR57t0qeaiF8pwjpcq78s32ohJEi8QGaetUMBjnOZJKGg2EFVUSHhTaaaSbZ3Fimyo1tciqWFYx1H8awdrQn3qaMPIS%2BogN3bCZv4Q%2Bp1dqx424hO65kDc64uTy5DcE1Y0PCb2E3nupuA9%2BjEvoi9yRF7XhXT888egO6kAR0y7P%2Fx40wnO6XsqcNF%2BsxbzIzi5fxzYinjECAAA%3D'
+bb = 'H4sIAAAAAAAAA91UCZLcMAj8EkIc4jnoesU%2BPo2dzNam8oJ4agyWuNRqIB%2BL8Ey8%2BUIRep4M%2BuvJy70MqNF4hGpQC9pr0rtsV%2BOktEGToltveeNM3XGMluY4f4ek4YOkU73bq7cB90aIJduup4Ut%2FBrfrnw6MfFQx%2Boxwb57Z5KjwtQbdmHRJ9NrgRKkvnyUxgHL5uSEeAoLNZZp4VKxe%2B8O796tMsiUoSJbFi8u%2B7BpCv%2Fy6tDvE63bcLZrG3u38sP7vFW8tWq3ZmYNVvEzC2GbARxvovCCV0lEkF0N2dSRyRmoBnAI65XHO3IZ6iVRnN6ron97ITUBHigGLClwY0EJbKMlztdYWNlwhuSDugg4uZCydkUAHRo67bj69Dtk2IiRY48bFC04eliMWIGbjZsInJw9NT0zV%2B7pc8xYtMaKlWuutfZu27bvsWPnXqcdP%2BDKmWedfc65l267KOXK1YujXiS7eeddd9%2FadqB9URE%2F52QaAlzBAtdCBZIChaotN%2BxLYYazK264WSi%2BEeHANmxrd7VD9n49XvHn6%2Feelkfdq3cCELlHHJ85LxXGxa3eC%2Bf8wQF6OUATPMEhcEPrYU2xtTNq%2FM84POQU1uAlbFCTAuMfXQuEVL%2Fx0u%2FcNDojF2H9Ra16AC1B9g6T0YuAlmnQJg7Qbj6asEd7NKOju7QT2%2BU%2B2ooQYvnEqBU7iSrwJPjuyxfmi6AfAmwH7cEpJKL25x%2Fn%2B9%2BIs4F9oTsH8GtACGztnhox151aic4Z8UUd4y3RW05nGI66iCfaHMSUFDqI1RaGLKYchhv5RV%2FcjlpmDK7qGVxaJFyTuAZs84PZIBMg3m9ZEyEWevVN%2FJFYXzfhj1lLlz%2ByYKgqwQPYjY%2FEuoFQhMz49o%2FEehLqVACElvzIsieFP1qAYn4k1qWEEsq28ZGo8qsuYLGpZPwCuI6yjmcGAAA%3D'
